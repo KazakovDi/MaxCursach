@@ -16,7 +16,7 @@ app.use("/", mainRouter)
 const start = async ()=> {
     try {
         await mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://user:user@cluster0.gjm6c.mongodb.net/max?retryWrites=true&w=majority")
-        app.listen(process.env.PORT || 5000, "0.0.0.0", ()=> {
+        app.listen(process.env.PORT || 5000, "127.0.0.1", ()=> {
             console.log("Сервер начал работу")
         })
     } catch(err) {
